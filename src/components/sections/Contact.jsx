@@ -1,4 +1,5 @@
-﻿import { useEffect, useRef, useState } from "react";
+﻿console.log("🔥 NEW CONTACT COMPONENT LOADED");
+import { useEffect, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   AlertTriangle,
@@ -539,7 +540,9 @@ export default function Contact() {
                     />
                   )}
                 </motion.button>
-
+<div className="fixed top-0 left-0 z-[99999] bg-red-600 p-5 text-white text-2xl">
+  NEW CONTACT COMPONENT
+</div>
                 <p className="text-[10px] uppercase tracking-[0.35em] text-white/30">
                   Nothing is stored - it goes straight through
                   

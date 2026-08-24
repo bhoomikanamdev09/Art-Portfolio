@@ -52,7 +52,7 @@ export default function CreativeProcess() {
     <section
       id="process"
       aria-label="Creative process"
-      className="relative overflow-hidden bg-black px-5 py-24 text-white sm:px-8 sm:py-32 xl:px-12"
+      className="relative overflow-hidden bg-black px-5 pt-14 pb-24 text-white sm:px-8 sm:pt-20 sm:pb-32 xl:px-12"
     >
       <span
         aria-hidden="true"
@@ -67,9 +67,9 @@ export default function CreativeProcess() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
           transition={{ duration: dur(0.7), ease: EASE }}
-          className="mb-16 border-b border-white/10 pb-12 sm:mb-24 sm:pb-16"
+          className="mb-10 border-b border-white/10 pb-8 sm:mb-14 sm:pb-10"
         >
-          <p className="mb-8 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/40">
+          <p className="mb-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-white/40 sm:mb-6">
             <span className="text-accent">( 04 )</span>
             <span aria-hidden="true" className="h-px w-10 bg-white/20" />
             Process

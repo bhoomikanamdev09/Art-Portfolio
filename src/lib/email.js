@@ -1,4 +1,4 @@
-import { send } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
@@ -13,21 +13,35 @@ export async function sendContactMessage({
   enquiry_type,
   idea,
 }) {
-  if (!isEmailConfigured()) {
-    throw new Error("Email service is not configured.");
+  if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+    throw new Error(
+      "EmailJS configuration is missing. Check your VITE_SERVICE_ID, VITE_TEMPLATE_ID and VITE_PUBLIC_KEY."
+    );
   }
 
-  return send(
+  // Explicitly initialize EmailJS.
+  emailjs.init({
+    publicKey: PUBLIC_KEY,
+  });
+
+  const response = await emailjs.send(
     SERVICE_ID,
     TEMPLATE_ID,
     {
-      from_name,
-      from_email,
-      reply_to: from_email,
+      from_name: from_name.trim(),
+      from_email: from_email.trim(),
+      reply_to: from_email.trim(),
       enquiry_type,
-      idea,
+      idea: idea.trim(),
       email_subject: `New Artwork Enquiry — ${enquiry_type}`,
-    },
-    { publicKey: PUBLIC_KEY },
+    }
   );
+
+  if (response.status !== 200) {
+    throw new Error(
+      `EmailJS returned status ${response.status}.`
+    );
+  }
+
+  return response;
 }

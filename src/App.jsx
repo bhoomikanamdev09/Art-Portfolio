@@ -9,6 +9,9 @@ import MusicToggle from "./components/ui/MusicToggle.jsx";
 function App() {
   return (
     <div className="min-h-screen bg-black text-white">
+        <div className="fixed top-0 left-0 z-[999999] bg-red-600 p-5 text-white text-2xl">
+        APP TEST 123456
+      </div>
       <Navbar />
       <main>
         <Hero />

@@ -542,7 +542,11 @@ export default function Contact() {
 
                 <p className="text-[10px] uppercase tracking-[0.35em] text-white/30">
                   Nothing is stored - it goes straight through
+                  
                 </p>
+                <h1 className="text-6xl font-bold text-red-500">
+                        VERCEL TEST 99999
+                    </h1>
               </div>
 
               {/* SUCCESS NOTIFICATION */}
